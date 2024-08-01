@@ -3,11 +3,14 @@
  import './main.css'
 
  function App() {
-    const [pointsA, setPointsA] = useState(1);
+    // Create states to manage points and 'reset' button  
+    const [pointsA, setPointsA] = useState(1); 
     const [pointsB, setPointsB] = useState(1);
     const [showReset, setShowReset] = useState(false);
   
-    const handleIncreasePoints = () => {
+
+    // The function handles 'Race' button
+    const handleRace = () => {
       const randomCharacter = Math.random() > 0.5 ? 'A' : 'B';
       if (randomCharacter === 'A') {
         setPointsA(prev => {
@@ -23,13 +26,18 @@
         });
       }
     };
-  
+
+
+    // The function handles 'reset' button
     const handleReset = () => {
       setPointsA(1);
       setPointsB(1);
       setShowReset(false);
     };
   
+
+
+    // The function handles massage displayed
     const getStatusMessage = () => {
       if (pointsA > pointsB) {
         return 'A is winning';
@@ -40,7 +48,9 @@
       }
     };
 
-function ProgressBar({ points }) {
+
+    // The component creates progress bar corresponding to each point of character
+    function ProgressBar({ points }) {
     const bars = [];
     for (let i = 0; i < points; i++) {
       bars.push(<div key={i} className="progress-bar"></div>);
@@ -48,6 +58,8 @@ function ProgressBar({ points }) {
   
     return <div className="progress-container">{bars}</div>;
   }
+
+
 
     return (
       <div className="App">
@@ -66,7 +78,7 @@ function ProgressBar({ points }) {
             </div>
           </div>
         </div>
-        <button onClick={handleIncreasePoints}>Race</button>
+        <button onClick={handleRace}>Race</button>
         {showReset && <button onClick={handleReset}>Reset</button>}
       </div>
     );
