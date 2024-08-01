@@ -1,0 +1,43 @@
+/* src/styles.css */
+.App {
+    text-align: left;
+    margin-top: 50px;
+  }
+  
+  .status {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .character-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: left;
+    gap: 10px;
+  }
+  
+  .character {
+    font-size: 1.2em;
+  }
+  
+  .progress-container {
+    display: flex;
+    flex-direction: row; 
+    gap: 1px; 
+
+  }
+  
+  .progress-bar {
+    height: 10px;
+    width: 50px; 
+    background-color: #4caf50; 
+    border: #333 2px solid;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
